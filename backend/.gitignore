@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+.npm
+
+# Environment variables
+.env
+.env.*
+*.env
+!.env.example
+
+# Local SQLite databases & Redis dumps
+*.sqlite
+*.sqlite3
+*.sqlite3-journal
+*.sqlite-journal
+*.db
+*.db-journal
+dump.rdb
+*.rdb
+
+# Runtime directories
+logs/
+*.log
+uploads/
+storage/
+backups/
+scratch/
+temp/
+tmp/
+
+# Testing & Coverage
+coverage/
+.nyc_output/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

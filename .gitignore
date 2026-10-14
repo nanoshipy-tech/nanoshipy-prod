@@ -1,0 +1,136 @@
+# ====================================================================
+# 1. ENVIRONMENT VARIABLES & SECRETS (NEVER COMMIT SENSITIVE DATA)
+# ====================================================================
+.env
+.env.*
+*.env
+*.env.*
+!.env.example
+!**/.env.example
+
+# ====================================================================
+# 2. DEPENDENCIES & PACKAGE MANAGERS
+# ====================================================================
+node_modules/
+jspm_packages/
+.pnp
+.pnp.js
+.npm
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnpm-store
+
+# ====================================================================
+# 3. NEXT.JS & FRONTEND BUILDS
+# ====================================================================
+.next/
+out/
+build/
+dist/
+.eslintcache
+*.tsbuildinfo
+next-env.d.ts
+
+# ====================================================================
+# 4. BACKEND, DATABASES, REDIS & PERSISTENCE
+# ====================================================================
+# SQLite & Database dumps
+*.sqlite
+*.sqlite3
+*.sqlite3-journal
+*.sqlite-journal
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Redis RDB dumps
+dump.rdb
+*.rdb
+
+# Backend uploads, file storage, backups & temp files
+uploads/
+storage/
+backups/
+scratch/
+temp/
+tmp/
+
+# Scratch & diagnostic scripts
+mismatches.json
+replace_script.js
+extract_apis.js
+find_mismatches.js
+replace.js
+walkthrough15
+walkthrough.md
+
+# Sensitive setup scripts & ad-hoc live test scripts
+setup_live_credentials.js
+*live*.js
+deactivate_banner.js
+update_min_recharge.js
+
+
+# ====================================================================
+# 5. LOGS & RUNTIME DATA
+# ====================================================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# ====================================================================
+# 6. TESTING & COVERAGE
+# ====================================================================
+coverage/
+.nyc_output/
+.pytest_cache/
+
+# ====================================================================
+# 7. PYTHON (if any backend tools are used)
+# ====================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+.poetry/
+*.egg-info/
+
+# ====================================================================
+# 8. OPERATING SYSTEM & IDE ARTIFACTS
+# ====================================================================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.bak
+*~
+
+# ====================================================================
+# 9. DEPLOYMENT & CLOUD ARTIFACTS
+# ====================================================================
+.vercel
+.serverless/
+.terraform/
+*.tfstate*
