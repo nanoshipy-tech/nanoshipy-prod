@@ -7,9 +7,6 @@ const { PERMISSIONS } = require('./src/constants/permissions.constant');
 const { encrypt } = require('./src/utils/encryption.util');
 
 async function seedAllAccounts() {
-  console.log('[Seed] Syncing database schema...');
-  await sequelize.sync({ force: false });
-
   // 1. Upsert Super Admin account admin-care@nanoshipy.com / Nanoshipy@2026
   console.log('[Seed] Updating Super Admin accounts...');
   const adminPasswordHash = await bcrypt.hash('Nanoshipy@2026', 10);
