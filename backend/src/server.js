@@ -14,17 +14,6 @@ const startServer = async () => {
     await sequelize.authenticate();
     logger.info('[DB] Connection has been established successfully.');
 
-    // Ensure ShopifyConnection, ShippingAllocationRule, ExportJob, WebhookEndpoint exist
-    const { ShopifyConnection, ShippingAllocationRule, ExportJob, WebhookEndpoint, WebhookDelivery, GrowaxIntegration, GrowaxTemplate, GrowaxMessageLog } = require('./models');
-    await ShopifyConnection.sync().catch(err => logger.warn(`[ShopifyConnection.sync] ${err.message}`));
-    await ShippingAllocationRule.sync().catch(err => logger.warn(`[ShippingAllocationRule.sync] ${err.message}`));
-    if (ExportJob) await ExportJob.sync().catch(err => logger.warn(`[ExportJob.sync] ${err.message}`));
-    if (WebhookEndpoint) await WebhookEndpoint.sync().catch(err => logger.warn(`[WebhookEndpoint.sync] ${err.message}`));
-    if (WebhookDelivery) await WebhookDelivery.sync({ alter: true }).catch(err => logger.warn(`[WebhookDelivery.sync] ${err.message}`));
-    if (GrowaxIntegration) await GrowaxIntegration.sync().catch(err => logger.warn(`[GrowaxIntegration.sync] ${err.message}`));
-    if (GrowaxTemplate) await GrowaxTemplate.sync().catch(err => logger.warn(`[GrowaxTemplate.sync] ${err.message}`));
-    if (GrowaxMessageLog) await GrowaxMessageLog.sync().catch(err => logger.warn(`[GrowaxMessageLog.sync] ${err.message}`));
-
     // Initialize Redis
     getRedisClient();
 

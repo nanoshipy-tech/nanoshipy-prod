@@ -69,9 +69,14 @@ walkthrough.md
 
 # Sensitive setup scripts & ad-hoc live test scripts
 setup_live_credentials.js
-*live*.js
+inspect_shopify_live.js
+test_shopify_fulfill_live.js
 deactivate_banner.js
 update_min_recharge.js
+backend/scripts/*live*.js
+backend/scripts/*deploy*.js
+scripts/*live*.js
+scripts/*deploy*.js
 
 
 # ====================================================================

@@ -182,8 +182,9 @@ class WebhookDispatcherService {
         // Success
         await delivery.update({
           attempts: currentAttempt,
-          status: 'success',
-          response_status: responseStatus,
+          attempt_number: currentAttempt,
+          status: 'delivered',
+          response_status_code: responseStatus,
           response_body: responseBody,
           delivered_at: new Date(),
           last_error: null,
@@ -228,8 +229,9 @@ class WebhookDispatcherService {
 
     await delivery.update({
       attempts: currentAttempt,
-      status: isExhausted ? 'failed' : 'pending',
-      response_status: statusCode,
+      attempt_number: currentAttempt,
+      status: isExhausted ? 'exhausted' : 'pending',
+      response_status_code: statusCode,
       last_error: errorMsg,
       next_retry_at: nextRetryAt,
     });
