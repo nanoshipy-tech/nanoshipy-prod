@@ -4,11 +4,12 @@ const logger = require('../utils/logger');
 
 const getPlatformCookieOptions = (maxAgeMs = 7 * 24 * 60 * 60 * 1000) => {
   const isProd = process.env.NODE_ENV === 'production';
+  const cookieDomain = process.env.COOKIE_DOMAIN || '.nanoshipy.in';
   return {
     httpOnly: true,
     secure: isProd,
     sameSite: isProd ? 'none' : 'lax',
-    domain: isProd ? '.nanoshipy.com' : undefined,
+    domain: isProd ? cookieDomain : undefined,
     path: '/',
     maxAge: maxAgeMs,
   };
@@ -16,11 +17,12 @@ const getPlatformCookieOptions = (maxAgeMs = 7 * 24 * 60 * 60 * 1000) => {
 
 const getClearPlatformCookieOptions = () => {
   const isProd = process.env.NODE_ENV === 'production';
+  const cookieDomain = process.env.COOKIE_DOMAIN || '.nanoshipy.in';
   return {
     httpOnly: true,
     secure: isProd,
     sameSite: isProd ? 'none' : 'lax',
-    domain: isProd ? '.nanoshipy.com' : undefined,
+    domain: isProd ? cookieDomain : undefined,
     path: '/',
   };
 };
