@@ -23,16 +23,26 @@ app.use(helmet({
 const allowedOrigins = [
   config.frontendUrl,
   config.platformAdminFrontendUrl,
+  // .com domains
   'https://app.nanoshipy.com',
   'https://admin.nanoshipy.com',
   'https://nanoshipy.com',
   'https://www.nanoshipy.com',
+  // .in domains
+  'https://app.nanoshipy.in',
+  'https://admin.nanoshipy.in',
+  'https://nanoshipy.in',
+  'https://www.nanoshipy.in',
   ...(process.env.NODE_ENV !== 'production'
     ? [
         'http://app.nanoshipy.com',
         'http://admin.nanoshipy.com',
         'http://nanoshipy.com',
         'http://www.nanoshipy.com',
+        'http://app.nanoshipy.in',
+        'http://admin.nanoshipy.in',
+        'http://nanoshipy.in',
+        'http://www.nanoshipy.in',
         'http://localhost:3000',
         'http://localhost:3001',
         'http://localhost:3002',
