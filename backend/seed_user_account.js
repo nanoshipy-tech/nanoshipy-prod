@@ -52,8 +52,8 @@ async function seedAllAccounts() {
       kyc_status: 'approved',
       gstin: '27AAAAA0000A1Z5',
       legal_name: 'Nanoshipy Logistics Private Limited',
-      company_email: 'demo@nanoshipy.com',
-      company_phone: '9876543210',
+      support_email: 'demo@nanoshipy.com',
+      support_phone: '9876543210',
     },
   });
 
@@ -87,7 +87,7 @@ async function seedAllAccounts() {
       tenant_id: tenant.id,
       name: 'Owner',
       description: 'Account Owner with full access',
-      is_system: true,
+      is_system_role: true,
     },
   });
 
