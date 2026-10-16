@@ -158,7 +158,7 @@ const me = async (req, res, next) => {
     if (!user) {
       return success(res, req.user);
     }
-    const { password_hash, two_factor_secret, viewable_password, ...safeUser } = user.toJSON();
+    const { password_hash, two_factor_secret, ...safeUser } = user.toJSON();
     return success(res, { ...safeUser, permissions: req.user.permissions || [] });
   } catch (err) {
     next(err);

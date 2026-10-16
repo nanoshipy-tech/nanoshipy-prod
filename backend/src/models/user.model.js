@@ -66,14 +66,10 @@ const User = sequelize.define('User', {
     defaultValue: 1,
     allowNull: false,
   },
-  viewable_password: {
-    type: DataTypes.STRING(255),
-    allowNull: true,
-  },
 }, {
   tableName: 'users',
   defaultScope: {
-    attributes: { exclude: ['password_hash', 'two_factor_secret', 'viewable_password'] },
+    attributes: { exclude: ['password_hash', 'two_factor_secret'] },
   },
   scopes: {
     withPassword: {
